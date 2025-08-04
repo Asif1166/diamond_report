@@ -6,6 +6,7 @@
     <title>IGDTL Certificate</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
     <style>
         body {
@@ -76,14 +77,14 @@
     margin-bottom: 20px;
 }
 
-{% comment %} 
+
      @media (min-width: 768px) {
             .certificate-qrcode {
                 max-width: 800px;
                 margin: 30px auto;
                 padding: 0;
             }
-        }  {% endcomment %}
+        } 
 
         .footer-image {
             width: 100%;
@@ -287,7 +288,8 @@
         }
 
         .left-content {
-            padding: 10px;
+            padding: 0px;
+            line-height: 20px
         }
 
         @media (min-width: 768px) {
@@ -299,12 +301,12 @@
 
         .right-content {
             text-align: center;
-            padding: 15px;
+            padding: 5px 10px 5px 20px;
         }
 
         @media (min-width: 768px) {
             .right-content {
-                padding: 40px;
+                padding: 7px 37px 5px 15px;
             }
         }
 
@@ -313,7 +315,6 @@
             font-weight: bold;
             margin-bottom: 8px;
             color: black;
-            font-family: 'Courier New', Courier, Monaco, Consolas, monospace;
         }
 
         @media (min-width: 768px) {
@@ -329,7 +330,7 @@
             font-size: 12px;
             align-items: center;
             color: black;
-            font-family: 'Courier New', Courier, Monaco, Consolas, monospace;
+            {% comment %} font-family: 'Courier New', Courier, Monaco, Consolas, monospace; {% endcomment %}
         }
 
         @media (min-width: 768px) {
@@ -393,24 +394,24 @@
         }
 
         .detail-label1::after {
-            content: '..............';
+            content: '................................';
             position: absolute;
             right: 0;
             color: #666;
             font-weight: bold;
-            letter-spacing: -3px;
+            letter-spacing: -1px;
         }
 
-        @media (min-width: 768px) {
+        {% comment %} @media (min-width: 768px) {
             .detail-label1::after {
-                content: '.....................';
-                letter-spacing: -4px;
+                content: '..............';
+                letter-spacing: -1px;
             }
-        }
+        } {% endcomment %}
 
         .detail-value1 {
             flex: 1;
-            font-weight: 900;
+            font-weight: bold;
             padding-left: 8px;
             letter-spacing: -1px;
         }
@@ -435,20 +436,20 @@
         }
 
         .detail-label2::after {
-            content: '............';
+            content: '...........................';
             position: absolute;
             right: 0;
             color: #666;
             font-weight: bold;
-            letter-spacing: -3px;
+            letter-spacing: -1px;
         }
 
-        @media (min-width: 768px) {
+        {% comment %} @media (min-width: 768px) {
             .detail-label2::after {
                 content: '.................';
-                letter-spacing: -4px;
+                letter-spacing: -1px;
             }
-        }
+        } {% endcomment %}
 
         .detail-value2 {
             flex: 1;
@@ -477,20 +478,20 @@
         }
 
         .detail-label3::after {
-            content: '..........';
+            content: '........................';
             position: absolute;
             right: 0;
             color: #666;
             font-weight: bold;
-            letter-spacing: -3px;
+            letter-spacing: -1px;
         }
 
-        @media (min-width: 768px) {
+        {% comment %} @media (min-width: 768px) {
             .detail-label3::after {
                 content: '..............';
-                letter-spacing: -4px;
+                letter-spacing: -1px;
             }
-        }
+        } {% endcomment %}
 
         .detail-value3 {
             flex: 1;
@@ -519,20 +520,20 @@
         }
 
         .detail-label4::after {
-            content: '..............';
+            content: '..................................';
             position: absolute;
             right: 0;
             color: #666;
             font-weight: bold;
-            letter-spacing: -3px;
+            letter-spacing: -1px;
         }
 
-        @media (min-width: 768px) {
+        {% comment %} @media (min-width: 768px) {
             .detail-label4::after {
-                content: '......................';
-                letter-spacing: -4px;
+                content: '........................';
+                letter-spacing: -1px;
             }
-        }
+        } {% endcomment %}
 
         .detail-value4 {
             flex: 1;
@@ -561,20 +562,20 @@
         }
 
         .detail-label5::after {
-            content: '..............';
+            content: '..................................';
             position: absolute;
             right: 0;
             color: #666;
             font-weight: bold;
-            letter-spacing: -3px;
+            letter-spacing: -1px;
         }
 
-        @media (min-width: 768px) {
+        {% comment %} @media (min-width: 768px) {
             .detail-label5::after {
                 content: '.....................';
-                letter-spacing: -4px;
+                letter-spacing: -1px;
             }
-        }
+        } {% endcomment %}
 
         .detail-value5 {
             flex: 1;
@@ -603,20 +604,20 @@
         }
 
         .detail-label6::after {
-            content: '..............';
+            content: '.....................................';
             position: absolute;
             right: 0;
             color: #666;
             font-weight: bold;
-            letter-spacing: -3px;
+            letter-spacing: -1px;
         }
-
+{% comment %} 
         @media (min-width: 768px) {
             .detail-label6::after {
                 content: '......................';
-                letter-spacing: -4px;
+                letter-spacing: -1px;
             }
-        }
+        } {% endcomment %}
 
         .detail-value6 {
             flex: 1;
@@ -645,20 +646,20 @@
         }
 
         .detail-label7::after {
-            content: '................';
+            content: '......................................';
             position: absolute;
             right: 0;
             color: #666;
             font-weight: bold;
-            letter-spacing: -3px;
+            letter-spacing: -1px;
         }
 
-        @media (min-width: 768px) {
+        {% comment %} @media (min-width: 768px) {
             .detail-label7::after {
                 content: '...........................';
-                letter-spacing: -4px;
+                letter-spacing: -1px;
             }
-        }
+        } {% endcomment %}
 
         .detail-value7 {
             flex: 1;
@@ -687,20 +688,20 @@
         }
 
         .detail-label8::after {
-            content: '..............';
+            content: '.....................................';
             position: absolute;
             right: 0;
             color: #666;
             font-weight: bold;
-            letter-spacing: -3px;
+            letter-spacing: -1px;
         }
 
-        @media (min-width: 768px) {
+        {% comment %} @media (min-width: 768px) {
             .detail-label8::after {
                 content: '........................';
-                letter-spacing: -4px;
+                letter-spacing: -1px;
             }
-        }
+        } {% endcomment %}
 
         .detail-value8 {
             flex: 1;
@@ -721,11 +722,15 @@
             height: auto;
             display: block;
             margin: 0 auto;
+            margin-left:20px
+            max-height: 185px;
         }
 
         @media (min-width: 768px) {
             .diamond-image-container img {
                 max-width: 250px;
+                margin-left:20px;
+                 max-height: 185px;
             }
         }
 
@@ -809,10 +814,10 @@
         @media (min-width: 768px) {
             .disclaimer {
                 font-size: 13px;
-                margin-top: 5px;
+                margin-top: 0px;
                 margin-left: 25px;
                 line-height: 1.4;
-                margin-bottom: 20px;
+                margin-bottom: 5px;
             }
         }
 
@@ -1036,6 +1041,7 @@
             .left-content {
                 order: 1;
                 margin-bottom: 10px;
+                line-height: 20px
             }
 
             .right-content {
@@ -1156,7 +1162,7 @@
 
 
    <div class="certificate-footer">
-        <img src="/static/second.jpg" alt="Footer" class="footer-image" />
+        <img src="/static/second.png" alt="Footer" class="footer-image" />
     </div>
 
 
@@ -1175,7 +1181,7 @@
     
     <!-- Action Buttons -->
     <div class="buttons-section">
-       <button class="btn btn-outline-dark action-btn" onclick="window.print()">
+       <button class="btn btn-outline-dark action-btn" onclick="printCertificate()">
     🖨️ Print
 </button>
 
@@ -1288,32 +1294,160 @@ function searchReport() {
 <style>
 @media print {
     body * {
-        visibility: hidden !important;
+        visibility: hidden;
     }
-
-    .certificate-body, .certificate-body * {
-        visibility: visible !important;
+    .certificate-container, .certificate-container * {
+        visibility: visible;
     }
-
-    .certificate-body {
+    .certificate-container {
         position: absolute;
         left: 0;
         top: 0;
         width: 100%;
-        background: white;
-        z-index: 9999;
     }
-
     .buttons-section {
-        display: none !important;
-    }
-
-    #notFoundMessage {
         display: none !important;
     }
 }
 </style>
 
+<script>
+function downloadCertificate() {
+    const buttons = document.querySelector('.buttons-section');
+    buttons.style.display = 'none';
+    
+    // Show loader
+    const loader = document.createElement('div');
+    loader.style.position = 'fixed';
+    loader.style.top = '0';
+    loader.style.left = '0';
+    loader.style.width = '100%';
+    loader.style.height = '100%';
+    loader.style.backgroundColor = 'rgba(0,0,0,0.5)';
+    loader.style.display = 'flex';
+    loader.style.justifyContent = 'center';
+    loader.style.alignItems = 'center';
+    loader.style.zIndex = '9999';
+    loader.innerHTML = '<div style="color:white;font-size:24px;">Downloading Certificate...</div>';
+    document.body.appendChild(loader);
+    
+    const element = document.querySelector('.certificate-body');
+    const reportNo = document.getElementById('report_number').innerText.replace('Report No : ', '') || 'certificate';
+    
+    // Create a clone for consistent rendering
+    const clone = element.cloneNode(true);
+   
+    clone.style.left = '-9999px';
+    clone.style.width = '800px'; // Fixed width matching certificate (19).png
+    clone.style.backgroundColor = '#ffffff';
+    document.body.appendChild(clone);
+    
+    html2canvas(clone, {
+        scale: 2,
+        width: 800,
+        windowWidth: 1000,
+        logging: false,
+        useCORS: true,
+        allowTaint: true,
+        backgroundColor: '#ffffff', // Force white background
+        onclone: (clonedDoc) => {
+            // Ensure white background in the cloned version
+            clonedDoc.querySelector('.certificate-body').style.backgroundColor = '#ffffff';
+        }
+    }).then(canvas => {
+        // Create download link
+        const link = document.createElement('a');
+        link.download = `${reportNo}.png`;
+        link.href = canvas.toDataURL('image/png');
+        document.body.appendChild(link);
+        link.click();
+        
+        // Cleanup
+        document.body.removeChild(link);
+        document.body.removeChild(clone);
+        document.body.removeChild(loader);
+        buttons.style.display = 'block';
+    }).catch(err => {
+        console.error('Error generating certificate:', err);
+        document.body.removeChild(loader);
+        buttons.style.display = 'block';
+    });
+}
+</script>
+
+
+
+<script>
+function printCertificate() {
+    // Hide buttons before capturing
+    const buttons = document.querySelector('.buttons-section');
+    buttons.style.display = 'none';
+    
+    // Get the certificate element
+    const element = document.querySelector('.certificate-body');
+    
+    html2canvas(element, {
+        scale: 1.5, // Fixed optimal scale
+        logging: false,
+        useCORS: true,
+        scrollY: -window.scrollY,
+        backgroundColor: null // Transparent background
+    }).then(canvas => {
+        // Create a new window with JUST the image
+        const printWindow = window.open('', '_blank');
+        
+        // Minimal print HTML with proper page sizing
+        printWindow.document.write(`
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Certificate Print</title>
+                <style>
+                    @page {
+                        size: A4 portrait;
+                        margin: 0;
+                        padding: 0;
+                    }
+                    body {
+                        margin: 0;
+                        padding: 0;
+                        height: 100vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: white;
+                    }
+                    img {
+                        max-width: 100%;
+                        max-height: 100vh;
+                        object-fit: contain;
+                        page-break-after: avoid;
+                        page-break-before: avoid;
+                        page-break-inside: avoid;
+                    }
+                </style>
+            </head>
+            <body>
+                <img src="${canvas.toDataURL('image/png')}" />
+                <script>
+                    // Print immediately when loaded
+                    window.onload = function() {
+                        setTimeout(function() {
+                            window.print();
+                            window.close();
+                        }, 100);
+                    };
+                <\/script>
+            </body>
+            </html>
+        `);
+        printWindow.document.close();
+        
+        // Restore buttons
+        buttons.style.display = 'block';
+    });
+}
+</script>
 
 </body>
 </html>
