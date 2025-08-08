@@ -1,0 +1,25 @@
+<div class="hm_about_wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <div class="hm_about_img">
+                    {% if about.image %}
+                        <img src="{{ about.image.url }}" alt="handmade-craft-about" class="img-responsive">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="hm_about_data">
+                    <h1>
+                        <span class="hm_color">{{ about.title_part1 }}</span> {{ about.title_part2 }}
+                    </h1>
+                    <p>{{ about.paragraph_1 }}</p>
+                    <p>{{ about.paragraph_2 }}</p>
+                    {% if about.button_text and about.button_link %}
+                        <a href="{{ about.button_link }}" class="hm_btn">{{ about.button_text }}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

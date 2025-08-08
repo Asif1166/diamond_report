@@ -1,0 +1,87 @@
+      
+      {% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+     <!-- Contact Info Section -->
+<div class="contact_wrapper">
+    <div class="container">
+        <div class="row">
+            {% if contact_info.email_1 or contact_info.email_2 %}
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="contact_box">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <h2>email</h2>
+                    {% if contact_info.email_1 %}<p><a href="mailto:{{ contact_info.email_1 }}">{{ contact_info.email_1 }}</a></p>{% endif %}
+                    {% if contact_info.email_2 %}<p><a href="mailto:{{ contact_info.email_2 }}">{{ contact_info.email_2 }}</a></p>{% endif %}
+                </div>
+            </div>
+            {% endif %}
+            {% if contact_info.phone_1 or contact_info.phone_2 %}
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="contact_box">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <h2>phone</h2>
+                    {% if contact_info.phone_1 %}<p>{{ contact_info.phone_1 }}</p>{% endif %}
+                    {% if contact_info.phone_2 %}<p>{{ contact_info.phone_2 }}</p>{% endif %}
+                </div>
+            </div>
+            {% endif %}
+            {% if contact_info.address %}
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="contact_box">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <h2>address</h2>
+                    <p>{{ contact_info.address|linebreaks }}</p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Contact Form + Map Section -->
+<div class="contact_form_wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 padding_left padding_right">
+                <div class="contact_map">
+                    <div id="contact_map">
+                        {{ contact_info.map_embed_code|safe }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 padding_right padding_left">
+                <div class="hm_form">
+                    <div class="col-lg-10 col-md-12">
+                        <h1>send a message</h1>
+                        <form method="post" class="form-inline">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="name" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="phone" placeholder="Phone">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="subject" placeholder="Subject">
+                            </div>
+                            <div class="form-group textarea">
+                                <textarea class="form-control" rows="3" name="message" placeholder="Message"></textarea>
+                            </div>
+                            <div class="con_btn">
+                                <button type="submit" class="hm_btn submit_frm">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock body %}

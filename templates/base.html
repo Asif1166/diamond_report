@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+
+
+<html lang="en">
+
+<head>
+    <title>Handicraft  - Responsive HTML Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="">
+    <meta name="author" content="" />
+    <meta name="MobileOptimized" content="320">
+    <!-- favicon links-->
+<link rel="icon" type="image/icon" href="{% static 'assets/images/favicon.png' %}" />
+<link rel="stylesheet" href="{% static 'assets/css/fonts.css' %}" />
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" href="{% static 'assets/css/font-awesome.css' %}" />
+<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}" />
+<link rel="stylesheet" href="{% static 'assets/css/custom_animation.css' %}" />
+<link rel="stylesheet" href="{% static 'assets/js/plugin/owl/owl.carousel.css' %}" />
+<link rel="stylesheet" href="{% static 'assets/css/style.css' %}" media="screen" />
+<link rel="stylesheet" href="{% static 'assets/css/colors/default.css' %}" id="colors" />
+
+</head>
+
+<body>
+    <!--preloader-->
+    {% comment %} <div class="loader">
+        <div class="loader-inner ball-scale-ripple-multiple">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div> {% endcomment %}
+ 
+    <!--main wrapper start-->
+    <div id="wrapper">
+
+<div class="home_style2">
+   
+
+{% include "header.html" %}
+      
+        {% block body %}
+        
+        
+        {% endblock body %}
+        
+         {% include "footer.html" %}
+
+    </div>
+    </div>
+
+    <!--script-->
+    
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/js/wow.min.js' %}"></script>
+<script src="{% static 'assets/js/plugin/owl/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.magnific-popup.js' %}"></script>
+<script src="{% static 'assets/js/switcher.js' %}"></script>
+<script src="{% static 'assets/js/custom.js' %}"></script>
+
+<script src="{% static 'assets/js/rocket-loader.min.js' %}" data-cf-settings="2254cef87eb97c99f55ccfae-|49" defer></script>
+
+
+
+</body>
+
+
+<!-- Mirrored from kamleshyadav.com/html/hand-made/html/bootstrap5/home-style2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Aug 2025 05:39:00 GMT -->
+</html>

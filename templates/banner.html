@@ -1,0 +1,25 @@
+<!-- banner start -->
+<div class="hm_banner_wrapper">
+    <div class="">
+        <div class="item">
+            <div class="slider_bg" style="background-image: url('{{ banner.background_image.url }}'); background-position: center;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12 col-lg-offset-2 col-md-offset-2">
+                            <div class="slider_caption">
+                                <h3>{{ banner.small_title }}</h3>
+                                <h1>{{ banner.big_title }}</h1>
+                                <p>{{ banner.description|linebreaks }}</p>
+                                {% if banner.button_text and banner.button_link %}
+                                <div class="button_wrapper">
+                                    <a href="{{ banner.button_link }}" class="read_more hm_btn">{{ banner.button_text }}</a>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

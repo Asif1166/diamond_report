@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import JsonResponse
-from report.models import DiamondReport
+from report.forms import ContactMessageForm
+from report.models import *
 
 # Create your views here.
 
@@ -31,6 +32,23 @@ def get_report_data(request):
 
 
 def home(request):
+    banner = HomeBanner.objects.first()
+    about = AboutSection.objects.first()
+
+
+    context = {
+        'banner': banner,
+        'about': about,
+
+    }
+
+
+
+    return render(request, 'home.html', context)
+
+
+
+def report(request):
 
 
     context = {
@@ -40,4 +58,29 @@ def home(request):
 
 
 
-    return render(request, 'home.html', context)
+    return render(request, 'report.html', context)
+
+
+
+def contact(request):
+    contact_info = ContactInfo.objects.first()
+
+    if request.method == 'POST':
+        name = request.POST.get('name', '')
+        email = request.POST.get('email', '')
+        phone = request.POST.get('phone', '')
+        subject = request.POST.get('subject', '')
+        message = request.POST.get('message', '')
+
+        ContactMessage.objects.create(
+            name=name,
+            email=email,
+            phone=phone,
+            subject=subject,
+            message=message
+        )
+        return redirect('contact')  # Optional: thank you page
+
+    return render(request, 'contact.html', {
+        'contact_info': contact_info
+    })
