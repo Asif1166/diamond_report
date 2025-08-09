@@ -1,25 +1,84 @@
-<!-- banner start -->
-<div class="hm_banner_wrapper">
-    <div class="">
-        <div class="item">
-            <div class="slider_bg" style="background-image: url('{{ banner.background_image.url }}'); background-position: center;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 col-xs-12 col-lg-offset-2 col-md-offset-2">
-                            <div class="slider_caption">
-                                <h3>{{ banner.small_title }}</h3>
-                                <h1>{{ banner.big_title }}</h1>
-                                <p>{{ banner.description|linebreaks }}</p>
-                                {% if banner.button_text and banner.button_link %}
-                                <div class="button_wrapper">
-                                    <a href="{{ banner.button_link }}" class="read_more hm_btn">{{ banner.button_text }}</a>
-                                </div>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- Split Hero Section -->
+<section class="split-hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-6 col-md-12 hero-text">
+                <h3>{{ banner.small_title }}</h3>
+                <h1>{{ banner.big_title }}</h1>
+                <p>{{ banner.description|linebreaks }}</p>
+                {% if banner.button_text and banner.button_link %}
+                <a href="{{ banner.button_link }}" class="hero-btn">{{ banner.button_text }}</a>
+                {% endif %}
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="col-lg-6 col-md-12 hero-img">
+                <img src="{{ banner.background_image.url }}" alt="Banner Image">
             </div>
         </div>
     </div>
-</div>
+</section>
+
+<style>
+/* HERO SECTION CONTAINER */
+.split-hero {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+/* LEFT TEXT SIDE */
+.hero-text h3 {
+    font-size: 1.5rem;
+    color: #ff9800;
+    margin-bottom: 10px;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+/* BUTTON */
+.hero-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #000045;
+    color: #fff;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+    background: #ffff;
+    transform: translateY(-3px);
+    border: 1px solid #000045;
+}
+
+/* RIGHT IMAGE SIDE */
+.hero-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Show full image without cropping */
+    border-radius: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .split-hero {
+        text-align: center;
+    }
+    .hero-text {
+        margin-bottom: 30px;
+    }
+}
+</style>

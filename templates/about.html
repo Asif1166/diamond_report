@@ -23,3 +23,32 @@
         </div>
     </div>
 </div>
+
+
+<style>
+    .hm_about_img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+    .hm_about_img {
+        position: relative;
+        width: 100%;
+        padding-top: 75%; /* 4:3 aspect ratio → (3/4)*100 = 75% */
+        overflow: hidden; /* Ensures nothing spills */
+    }
+
+    .hm_about_img img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Show full image without cropping */
+        background-color: #fff; /* Optional: fill background if aspect ratio doesn't match */
+    }
+}
+</style>
