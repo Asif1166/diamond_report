@@ -1,22 +1,96 @@
-<div class="hm_about_wrapper">
+<div class="hm_about_wrapper" id="about">
     <div class="container">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-lg-6 col-md-12">
                 <div class="hm_about_img">
                     {% if about.image %}
-                        <img src="{{ about.image.url }}" alt="handmade-craft-about" class="img-responsive">
+                        <div class="about-image-frame">
+                            <img src="{{ about.image.url }}" alt="Professional Testing Laboratory" class="img-responsive">
+                            
+                            <!-- Simple overlay stats -->
+                            <div class="image-overlay">
+                                <div class="overlay-stats">
+                                    <div class="overlay-stat">
+                                        <span class="stat-number">15+</span>
+                                        <span class="stat-text">Years Experience</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     {% endif %}
                 </div>
             </div>
+            
             <div class="col-lg-6 col-md-12">
                 <div class="hm_about_data">
+                    <!-- Section Label -->
+                    <div class="section-label">
+                        <span>About Our Laboratory</span>
+                    </div>
+                    
                     <h1>
                         <span class="hm_color">{{ about.title_part1 }}</span> {{ about.title_part2 }}
                     </h1>
-                    <p>{{ about.paragraph_1 }}</p>
-                    <p>{{ about.paragraph_2 }}</p>
+                    
+                    <div class="about-description">
+                        <p class="intro-text">{{ about.paragraph_1 }}</p>
+                        <!-- <p>{{ about.paragraph_2 }}</p> -->
+                    </div>
+                    
+                    <!-- Professional Highlights -->
+                    <div class="professional-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fa fa-certificate"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Certified & Accredited</h4>
+                                <p>ISO 9001:2015 and NABL accredited testing facility</p>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fa fa-clock"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Quick Turnaround</h4>
+                                <p>Fast and reliable report delivery within 24-48 hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fa fa-shield-alt"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Quality Assured</h4>
+                                <p>Stringent quality control and accurate testing methods</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Simple Stats Row -->
+                    <!-- <div class="about-stats">
+                        <div class="about-stat">
+                            <h3>50,000+</h3>
+                            <p>Tests Completed</p>
+                        </div>
+                        <div class="about-stat">
+                            <h3>99.8%</h3>
+                            <p>Accuracy Rate</p>
+                        </div>
+                        <div class="about-stat">
+                            <h3>24/7</h3>
+                            <p>Customer Support</p>
+                        </div>
+                    </div>
+                     -->
+                    <!-- CTA Button -->
                     {% if about.button_text and about.button_link %}
-                        <a href="{{ about.button_link }}" class="hm_btn">{{ about.button_text }}</a>
+                        <div class="about-cta">
+                            <a href="{{ about.button_link }}" class="hm_btn">{{ about.button_text }}</a>
+                        </div>
                     {% endif %}
                 </div>
             </div>
@@ -24,21 +98,263 @@
     </div>
 </div>
 
-
 <style>
-    .hm_about_img img {
+/* Import Clean Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+
+/* ABOUT SECTION */
+.hm_about_wrapper {
+    padding: 70px 0;
+    background-color: #ffffff;
+    position: relative;
+}
+
+/* IMAGE SECTION */
+.hm_about_img {
+    padding-right: 20px;
+}
+
+.about-image-frame {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    background: #f8f9fa;
+}
+
+.hm_about_img img {
     width: 100%;
     height: auto;
     display: block;
+    transition: transform 0.3s ease;
 }
 
-/* Mobile adjustments */
+.hm_about_img:hover img {
+    transform: scale(1.03);
+}
+
+/* Image Overlay */
+.image-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.overlay-stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2563eb;
+    font-family: 'Inter', sans-serif;
+}
+
+.stat-text {
+    font-size: 0.8rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* CONTENT SECTION */
+.hm_about_data {
+    padding-left: 20px;
+}
+
+/* Section Label */
+.section-label {
+    margin-bottom: 15px;
+}
+
+.section-label span {
+    display: inline-block;
+    background: #eff6ff;
+    color: #2563eb;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Heading */
+.hm_about_data h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0px;
+    color: #1f2937;
+}
+
+.hm_color {
+    color: #2563eb;
+}
+
+/* Description */
+.about-description {
+    margin-bottom: 35px;
+}
+
+.intro-text {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.about-description p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #6b7280;
+    margin-bottom: 12px;
+}
+
+/* Professional Highlights */
+.professional-highlights {
+    margin-bottom: 0px;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 5px;
+    padding: 15px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border-left: 4px solid #000045;
+    transition: all 0.3s ease;
+}
+
+.highlight-item:hover {
+    background: #f3f4f6;
+    transform: translateX(5px);
+}
+
+.highlight-icon {
+    background: #000045;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.highlight-content h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+    color: #1f2937;
+}
+
+.highlight-content p {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* About Stats */
+.about-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    padding: 25px 0;
+    border-top: 2px solid #e5e7eb;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.about-stat {
+    text-align: center;
+    flex: 1;
+}
+
+.about-stat h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #2563eb;
+    margin: 0 0 5px 0;
+}
+
+.about-stat p {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* CTA Button */
+.about-cta {
+    text-align: left;
+}
+
+.hm_btn {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #2563eb;
+    font-family: 'Inter', sans-serif;
+}
+
+.hm_btn:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    color: white;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 991px) {
+    .hm_about_img {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+    
+    .hm_about_data {
+        padding-left: 0;
+    }
+    
+    .hm_about_data h1 {
+        font-size: 2rem;
+    }
+}
+
 @media (max-width: 767px) {
+    .hm_about_wrapper {
+        padding: 50px 0;
+    }
+    
+    /* Mobile image handling */
     .hm_about_img {
         position: relative;
         width: 100%;
-        padding-top: 75%; /* 4:3 aspect ratio → (3/4)*100 = 75% */
-        overflow: hidden; /* Ensures nothing spills */
+        padding-top: 60%;
+        overflow: hidden;
+        margin-bottom: 30px;
     }
 
     .hm_about_img img {
@@ -47,8 +363,87 @@
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: contain; /* Show full image without cropping */
-        background-color: #fff; /* Optional: fill background if aspect ratio doesn't match */
+        object-fit: cover;
+        background-color: #f8f9fa;
+    }
+    
+    .about-image-frame {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .image-overlay {
+        bottom: 15px;
+        left: 15px;
+        padding: 12px 16px;
+    }
+    
+    .hm_about_data h1 {
+        font-size: 1.75rem;
+    }
+    
+    .about-stats {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .about-stat {
+        padding: 15px;
+        background: #f9fafb;
+        border-radius: 8px;
+    }
+    
+    .highlight-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px 15px;
+    }
+    
+    .highlight-content h4,
+    .highlight-content p {
+        text-align: center;
+    }
+    
+    .about-cta {
+        text-align: center;
+    }
+    
+    .hm_btn {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-label span {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+    
+    .hm_about_data h1 {
+        font-size: 1.5rem;
+    }
+    
+    .intro-text {
+        font-size: 1rem;
+    }
+    
+    .highlight-item {
+        margin-bottom: 15px;
+        padding: 15px 12px;
+    }
+    
+    .about-stats {
+        gap: 15px;
+    }
+    
+    .about-stat h3 {
+        font-size: 1.5rem;
     }
 }
 </style>

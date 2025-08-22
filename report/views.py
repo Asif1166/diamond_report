@@ -34,11 +34,14 @@ def get_report_data(request):
 def home(request):
     banner = HomeBanner.objects.first()
     about = AboutSection.objects.first()
+    contact_info = ContactInfo.objects.first()
 
 
     context = {
         'banner': banner,
         'about': about,
+        'contact_info': contact_info
+
 
     }
 
@@ -49,10 +52,11 @@ def home(request):
 
 
 def report(request):
+    contact_info = ContactInfo.objects.first()
 
 
     context = {
-
+ 'contact_info': contact_info
 
     }
 
