@@ -69,3 +69,15 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return f"Message from {self.name or 'Anonymous'}"
+
+
+class DiamondShape(models.Model):
+
+    
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    image = models.ImageField(upload_to='diamond_shapes/')
+
+    
+    def __str__(self):
+        return self.name

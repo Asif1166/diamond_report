@@ -8,4 +8,6 @@ urlpatterns = [
 
     path('get-report-data/', views.get_report_data, name='get_report_data'),
 
+
+
 ]

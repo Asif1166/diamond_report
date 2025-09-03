@@ -37,12 +37,15 @@ def home(request):
     contact_info = ContactInfo.objects.first()
 
 
+    shapes = DiamondShape.objects.all()
+
     context = {
         'banner': banner,
         'about': about,
-        'contact_info': contact_info
+        'contact_info': contact_info,
 
-
+        'shapes': shapes,
+ 
     }
 
 
@@ -88,3 +91,5 @@ def contact(request):
     return render(request, 'contact.html', {
         'contact_info': contact_info
     })
+
+

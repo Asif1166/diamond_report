@@ -90,6 +90,10 @@
     </div>
 </section>
 
+
+
+
+
 <style>
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
@@ -430,3 +434,1411 @@
     }
 }
 </style>
+
+
+
+
+<section class="diamond-shapes">
+    <div class="container">
+        <div class="section-header">
+            <h3>Diamond Shapes</h3>
+            <p>Each diamond shape has its own unique personality and brilliance. Choose the one that speaks to your heart.</p>
+        </div>
+        <div class="shapes-grid">
+
+            {% for shape in shapes %}
+            <div class="shape-card" data-shape="{{ shape.name|lower }}">
+                {% if shape.image %}
+               <img src="{{ shape.image.url }}" alt="{{ shape.name }}">
+               {% endif %}
+                <h4>{{ shape.name }}</h4>
+                <p>{{ shape.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section class="four-cs-section">
+    <div class="container">
+        <div class="section-header">
+            <h3>The 4 C's of Diamonds</h3>
+            <p>Understanding Cut, Color, Clarity, and Carat Weight - the universal standards for evaluating diamond quality.</p>
+        </div>
+        
+        <div class="cs-tabs">
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="cut">
+                    <i class="fas fa-cut"></i>
+                    <span>Cut</span>
+                </button>
+                <button class="tab-btn" data-tab="color">
+                    <i class="fas fa-palette"></i>
+                    <span>Color</span>
+                </button>
+                <button class="tab-btn" data-tab="clarity">
+                    <i class="fas fa-eye"></i>
+                    <span>Clarity</span>
+                </button>
+                <button class="tab-btn" data-tab="carat">
+                    <i class="fas fa-weight-scale"></i>
+                    <span>Carat</span>
+                </button>
+            </div>
+            
+            <div class="tab-content">
+                <!-- Cut Tab -->
+                <div class="tab-panel active" id="cut">
+                    <div class="cs-content">
+                        <div class="cs-text">
+                            <h4>Diamond Cut</h4>
+                            <p>The cut determines how well a diamond reflects light, affecting its brilliance and fire. A well-cut diamond maximizes light return, creating exceptional sparkle.</p>
+                            <div class="cut-grades">
+                                <div class="grade excellent">
+                                    <div class="grade-icon">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="grade-info">
+                                        <h5>Excellent</h5>
+                                        <p>Maximum brilliance and fire</p>
+                                    </div>
+                                </div>
+                                <div class="grade very-good">
+                                    <div class="grade-icon">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="grade-info">
+                                        <h5>Very Good</h5>
+                                        <p>Superior light performance</p>
+                                    </div>
+                                </div>
+                                <div class="grade good">
+                                    <div class="grade-icon">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="grade-info">
+                                        <h5>Good</h5>
+                                        <p>Excellent value with good brilliance</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cs-visual">
+                            <div class="cut-demonstration">
+                                <div class="diamond-cut-example">
+                        
+                                
+                             
+                                                                                <img src="/static/diamond_cut.jpg" alt="">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Color Tab -->
+                <div class="tab-panel" id="color">
+                    <div class="cs-content">
+                        <div class="cs-text">
+                            <h4>Diamond Color</h4>
+                            <p>Diamond color is graded from D (colorless) to Z (light yellow or brown). The less color, the higher the grade and value.</p>
+                            <div class="color-scale">
+                                <div class="color-grade d-f">
+                                    <span class="grade-letter">D-F</span>
+                                    <span class="grade-name">Colorless</span>
+                                </div>
+                                <div class="color-grade g-j">
+                                    <span class="grade-letter">G-J</span>
+                                    <span class="grade-name">Near Colorless</span>
+                                </div>
+                                <div class="color-grade k-m">
+                                    <span class="grade-letter">K-M</span>
+                                    <span class="grade-name">Faint Yellow</span>
+                                </div>
+                                <div class="color-grade n-z">
+                                    <span class="grade-letter">N-Z</span>
+                                    <span class="grade-name">Light Yellow</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cs-visual">
+                            <div class="cut-demonstration">
+                                <div class="diamond-cut-example">
+                        
+                                
+                             
+                                 <img src="/static/colors.jpg" alt="">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Clarity Tab -->
+                <div class="tab-panel" id="clarity">
+                    <div class="cs-content">
+                        <div class="cs-text">
+                            <h4>Diamond Clarity</h4>
+                            <p>Clarity refers to the absence of inclusions and blemishes. Most inclusions are invisible to the naked eye but affect the diamond's brilliance.</p>
+                            <div class="clarity-grades">
+                                <div class="clarity-item">
+                                    <span class="clarity-grade">FL/IF</span>
+                                    <span class="clarity-desc">Flawless/Internally Flawless</span>
+                                </div>
+                                <div class="clarity-item">
+                                    <span class="clarity-grade">VVS1/VVS2</span>
+                                    <span class="clarity-desc">Very Very Slightly Included</span>
+                                </div>
+                                <div class="clarity-item">
+                                    <span class="clarity-grade">VS1/VS2</span>
+                                    <span class="clarity-desc">Very Slightly Included</span>
+                                </div>
+                                <div class="clarity-item">
+                                    <span class="clarity-grade">SI1/SI2</span>
+                                    <span class="clarity-desc">Slightly Included</span>
+                                </div>
+                            </div>
+                        </div>
+                          <div class="cs-visual">
+                            <div class="cut-demonstration">
+                                <div class="diamond-cut-example">
+                        
+                                
+                             
+                                 <img src="/static/clarity.jpg" alt="">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carat Tab -->
+                <div class="tab-panel" id="carat">
+                    <div class="cs-content">
+                        <div class="cs-text">
+                            <h4>Diamond Carat Weight</h4>
+                            <p>Carat measures a diamond's weight, not size. One carat equals 200 milligrams. Larger diamonds are exponentially more rare and valuable.</p>
+                            <div class="carat-sizes">
+                                <div class="carat-item">
+                                    <div class="carat-circle small"></div>
+                                    <span>0.50ct</span>
+                                </div>
+                                <div class="carat-item">
+                                    <div class="carat-circle medium"></div>
+                                    <span>1.00ct</span>
+                                </div>
+                                <div class="carat-item">
+                                    <div class="carat-circle large"></div>
+                                    <span>2.00ct</span>
+                                </div>
+                                <div class="carat-item">
+                                    <div class="carat-circle xlarge"></div>
+                                    <span>3.00ct</span>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="cs-visual">
+                            <div class="cut-demonstration">
+                                <div class="diamond-cut-example">
+                        
+                                
+                             
+                                 <img src="/static/carat.webp" alt="">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- <section class="stone-collection">
+    <div class="container">
+        <div class="section-header">
+            <h3>Premium Stone Collection</h3>
+            <p>Explore our exquisite collection of rare and beautiful gemstones, each carefully selected for their exceptional quality and unique characteristics.</p>
+        </div>
+        
+        <div class="stone-categories">
+            <div class="category-tabs">
+                <button class="category-btn active" data-category="precious">Precious Stones</button>
+                <button class="category-btn" data-category="semi-precious">Semi-Precious</button>
+                <button class="category-btn" data-category="effects">Special Effects</button>
+            </div>
+            
+            <div class="stones-grid" id="precious">
+                <div class="stone-card premium">
+                    <div class="stone-image">
+                        <div class="stone-gem ruby"></div>
+                        <div class="stone-sparkle"></div>
+                    </div>
+                    <div class="stone-info">
+                        <h4>Ruby</h4>
+                        <p>The king of precious stones, symbolizing passion and courage with its vibrant red color.</p>
+                        <div class="stone-properties">
+                            <span class="hardness">Hardness: 9</span>
+                            <span class="rarity">Extremely Rare</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stone-card premium">
+                    <div class="stone-image">
+                        <div class="stone-gem sapphire"></div>
+                        <div class="stone-sparkle"></div>
+                    </div>
+                    <div class="stone-info">
+                        <h4>Sapphire</h4>
+                        <p>Available in various colors, sapphires represent wisdom and divine favor.</p>
+                        <div class="stone-properties">
+                            <span class="hardness">Hardness: 9</span>
+                            <span class="rarity">Very Rare</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stone-card premium">
+                    <div class="stone-image">
+                        <div class="stone-gem emerald"></div>
+                        <div class="stone-sparkle"></div>
+                    </div>
+                    <div class="stone-info">
+                        <h4>Emerald</h4>
+                        <p>The gem of spring, emeralds captivate with their lush green color and natural inclusions.</p>
+                        <div class="stone-properties">
+                            <span class="hardness">Hardness: 7.5-8</span>
+                            <span class="rarity">Extremely Rare</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+
+<style>
+
+    /* Container for the cut demonstration */
+.cut-demonstration {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+}
+
+/* Diamond cut example container */
+.diamond-cut-example {
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Image styling */
+.diamond-cut-example img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.diamond-cut-example:hover img {
+    transform: scale(1.02);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .diamond-cut-example {
+        height: 333px;
+
+    }
+    
+    .cs-content {
+        flex-direction: column;
+    }
+    
+   
+}
+
+@media (max-width: 480px) {
+    .diamond-cut-example {
+        height: 333px;
+
+    }
+}
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fafafa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Diamond Hero Section */
+.diamond-hero {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.diamond-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.diamond-hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.diamond-hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.diamond-hero p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #cbd5e1;
+    max-width: 500px;
+}
+
+.diamond-showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 300px;
+}
+
+.diamond-glow {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.diamond-icon {
+    font-size: 4rem;
+    color: #3b82f6;
+    animation: rotate 10s linear infinite;
+    z-index: 2;
+    position: relative;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.2); opacity: 1; }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Diamond Shapes Section */
+.diamond-shapes {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 16px;
+}
+
+.section-header p {
+    font-size: 1.125rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.shapes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+    gap: 15px;
+    width: 100%;
+}
+
+.shape-card {
+    background: #0e3d57;
+    padding: 25px 20px; /* Adjusted padding for 4-column layout */
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.shape-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.shape-card img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.shape-card h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.shape-card p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+/* Tablet devices (2 columns) */
+@media (max-width: 1024px) {
+    .shapes-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+        gap: 20px;
+    }
+    
+    .shape-card {
+        padding: 10px 0px;
+    }
+    
+    .shape-card img {
+        width: 100px;
+        height: 84px;
+    }
+}
+
+/* Tablet devices (2 columns) */
+@media (max-width: 1024px) {
+    .shapes-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 20px;
+    }
+}
+
+/* Mobile devices (2 columns) */
+@media (max-width: 768px) {
+    .shapes-grid {
+        grid-template-columns: repeat(2, 1fr); /* keep 2 columns */
+        gap: 15px;
+    }
+}
+
+/* Small mobile devices (still 2 columns, not 1) */
+@media (max-width: 480px) {
+    .shapes-grid {
+        grid-template-columns: repeat(2, 1fr); /* force 2 columns */
+    }
+}
+
+
+/* 4 C's Section */
+.four-cs-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.cs-tabs {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tab-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-bottom: 40px;
+    background: #f1f5f9;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.tab-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px;
+    background: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: #64748b;
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.tab-btn i {
+    font-size: 1.5rem;
+}
+
+.tab-panel {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cs-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.cs-text h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 20px;
+}
+
+.cs-text p {
+    font-size: 1.125rem;
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.cut-grades {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.grade {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border-left: 4px solid #3b82f6;
+}
+
+.grade-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.grade-info h5 {
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.grade-info p {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin: 0;
+}
+
+.color-scale {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.color-grade {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 4px solid #3b82f6;
+}
+
+.grade-letter {
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.grade-name {
+    color: #64748b;
+}
+
+.clarity-grades {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.clarity-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 4px solid #3b82f6;
+}
+
+.clarity-grade {
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.clarity-desc {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.carat-sizes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.carat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.carat-circle {
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.carat-circle.small {
+    width: 30px;
+    height: 30px;
+}
+
+.carat-circle.medium {
+    width: 40px;
+    height: 40px;
+}
+
+.carat-circle.large {
+    width: 55px;
+    height: 55px;
+}
+
+.carat-circle.xlarge {
+    width: 70px;
+    height: 70px;
+}
+
+.cs-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cut-demonstration {
+    position: relative;
+
+}
+
+.diamond-outline {
+    width: 100px;
+    height: 100px;
+    border: 3px solid #3b82f6;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.light-rays {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 60%);
+    border-radius: 50%;
+    animation: pulse-light 2s ease-in-out infinite;
+}
+
+@keyframes pulse-light {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.2); }
+}
+
+.color-comparison {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.diamond-color {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #e2e8f0;
+}
+
+.diamond-color.colorless {
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+}
+
+.diamond-color.near-colorless {
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+}
+
+.diamond-color.faint-yellow {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+}
+
+.diamond-color.light-yellow {
+    background: linear-gradient(135deg, #fde68a, #fcd34d);
+}
+
+.clarity-demonstration {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.magnifying-glass {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border: 4px solid #3b82f6;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.magnifying-glass i {
+    font-size: 3rem;
+    color: #3b82f6;
+}
+
+.diamond-under-scope {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #ffffff, #e2e8f0);
+    border: 2px solid #3b82f6;
+    border-radius: 50%;
+    top: -20px;
+    right: -20px;
+    animation: scope-pulse 2s ease-in-out infinite;
+}
+
+@keyframes scope-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.weight-scale {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.weight-scale i {
+    font-size: 4rem;
+    color: #3b82f6;
+    animation: balance 3s ease-in-out infinite;
+}
+
+@keyframes balance {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+.scale-reading {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Stone Collection Section */
+.stone-collection {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 50px;
+    background: white;
+    border-radius: 50px;
+    padding: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.category-btn {
+    padding: 15px 30px;
+    background: none;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    text-align: center;
+}
+
+.category-btn.active {
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.stones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.stone-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.stone-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.stone-card.premium::before {
+    content: 'Premium';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 3;
+}
+
+.stone-image {
+    position: relative;
+    height: 200px;
+    background: linear-gradient(135deg, #1e293b, #334155);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.stone-gem {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.stone-gem.ruby {
+    background: linear-gradient(135deg, #dc2626, #991b1b);
+    box-shadow: 0 0 30px rgba(220, 38, 38, 0.5);
+}
+
+.stone-gem.sapphire {
+    background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+    box-shadow: 0 0 30px rgba(29, 78, 216, 0.5);
+}
+
+.stone-gem.emerald {
+    background: linear-gradient(135deg, #059669, #047857);
+    box-shadow: 0 0 30px rgba(5, 150, 105, 0.5);
+}
+
+.stone-sparkle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
+    animation: sparkle 3s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+}
+
+.stone-info {
+    padding: 30px;
+}
+
+.stone-info h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+.stone-info p {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.stone-properties {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stone-properties span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.hardness {
+    color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+    padding: 4px 12px;
+    border-radius: 15px;
+}
+
+.rarity {
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+    padding: 4px 12px;
+    border-radius: 15px;
+}
+
+/* Expert CTA Section */
+.expert-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.expert-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.cta-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cta-text p {
+    font-size: 1.125rem;
+    color: #cbd5e1;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.expert-features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #e2e8f0;
+}
+
+.feature i {
+    color: #3b82f6;
+    font-size: 1.2rem;
+    width: 20px;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    min-width: 250px;
+}
+
+.cta-btn.primary {
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    color: white;
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+.cta-btn.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.6);
+    color: white;
+}
+
+.cta-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.cta-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .diamond-hero .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .diamond-hero h2 {
+        font-size: 2.5rem;
+    }
+    
+    .cs-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .cta-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-header h3 {
+        font-size: 2rem;
+    }
+    
+    .diamond-hero h2 {
+        font-size: 2rem;
+    }
+    
+    .tab-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .shapes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .category-tabs {
+        flex-direction: column;
+        max-width: 300px;
+    }
+    
+    .stones-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .cta-text h3 {
+        font-size: 2rem;
+    }
+    
+    .expert-features {
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .diamond-hero {
+        padding: 60px 0;
+    }
+    
+    .diamond-hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-header h3 {
+        font-size: 1.8rem;
+    }
+    
+    .shape-card,
+    .stone-card {
+        margin: 0 0px;
+    }
+
+    
+    .tab-btn {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .carat-sizes {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+    
+    .color-comparison {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* JavaScript Interactions */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+
+<script>
+// Tab functionality for 4 C's section
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+            
+            // Remove active class from all buttons and panels
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabPanels.forEach(panel => panel.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding panel
+            this.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+    
+    // Category tabs for stone collection
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // You can add functionality to show different stone collections here
+            // For now, we're showing the same stones
+        });
+    });
+    
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+    
+    // Add fade-in class to elements and observe them
+    const animatedElements = document.querySelectorAll('.shape-card, .stone-card, .section-header');
+    animatedElements.forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+    });
+    
+    // Shape card hover effects
+    const shapeCards = document.querySelectorAll('.shape-card');
+    shapeCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const shape = this.querySelector('.diamond-shape');
+            shape.style.transform = 'scale(1.1) rotate(10deg)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const shape = this.querySelector('.diamond-shape');
+            shape.style.transform = 'scale(1) rotate(0deg)';
+        });
+    });
+    
+    // Stone card sparkle effect on hover
+    const stoneCards = document.querySelectorAll('.stone-card');
+    stoneCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const sparkle = this.querySelector('.stone-sparkle');
+            sparkle.style.animationDuration = '1s';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const sparkle = this.querySelector('.stone-sparkle');
+            sparkle.style.animationDuration = '3s';
+        });
+    });
+});
+</script>
